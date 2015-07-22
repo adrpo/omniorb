@@ -741,7 +741,11 @@ giopStream::ensureSaneHeader(const char* filename, CORBA::ULong lineno,
   CORBA::ULong msz;
 
   // check for 8 byte alignment 
+#if defined(_WIN64)
+  if (((ptr_arith_t)hdr & 7) == 0)
+#else
   if (((long)hdr & 7) == 0)
+#endif
     msz = *(CORBA::ULong*)(hdr + 8);
   else
     memcpy(&msz, hdr + 8, sizeof(CORBA::ULong));

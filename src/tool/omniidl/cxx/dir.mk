@@ -290,7 +290,7 @@ PYPREFIX1 := "$(shell $(PYTHON) -c 'import sys,string; sys.stdout.write(string.l
 PYPREFIX  := $(subst program files,progra~1,$(subst \,/,$(PYPREFIX1)))
 PYVERSION := $(shell $(PYTHON) -c 'import sys; sys.stdout.write(sys.version[:3])')
 PYINCDIR  := $(PYPREFIX)/include
-PYLIBDIR  := $(PYPREFIX)/libs $(PYPREFIX)/lib/x86_win32 $(PYPREFIX)/PCbuild
+PYLIBDIR  := $(PYPREFIX)/libs $(PYPREFIX)/lib/x86_win32 $(PYPREFIX)/PCbuild /lib
 
 DIR_CPPFLAGS += -I$(PYINCDIR) -I$(PYPREFIX)/PC \
                 -I$(PYINCDIR)/python$(PYVERSION) \
@@ -298,6 +298,7 @@ DIR_CPPFLAGS += -I$(PYINCDIR) -I$(PYPREFIX)/PC \
 
 ifdef MinGW32Build
 PYLIB     := -lpython$(subst .,,$(PYVERSION))
+#PYLIB     := -lpython$(PYVERSION)
 CXXLINKOPTIONS += $(patsubst %,-L%,$(PYLIBDIR))
 else
 PYLIB     := python$(subst .,,$(PYVERSION)).lib

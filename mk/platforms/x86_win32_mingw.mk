@@ -21,8 +21,9 @@ ABSTOP = $(shell cd $(TOP); pwd)
 # http://sourceforge.net/project/showfiles.php?group_id=51138
 # In that case, uncomment the first line below.
 
-PYTHON = $(ABSTOP)/$(BINDIR)/omnipython
-#PYTHON = /cygdrive/c/Python23/python
+#PYTHON = $(ABSTOP)/$(BINDIR)/omnipython
+PYTHON = /f/bin/python64/python
+#PYTHON = /mingw64/bin/python
 
 
 #
@@ -33,7 +34,7 @@ include $(THIS_IMPORT_TREE)/mk/mingw.mk
 
 
 
-IMPORT_CPPFLAGS += -D__x86__ -D__NT__ -D__OSVERSION__=4
+IMPORT_CPPFLAGS += -D__x86__ -D__NT__ -D__OSVERSION__=4 -D_WIN64 -DMS_WIN64
 
 
 # Default directory for the omniNames log files.

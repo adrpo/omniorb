@@ -60,7 +60,7 @@
 #platform = x86_win32_vs_8
 #platform = x86_win32_vs_9
 #platform = x86_win32_vs_10
-#platform = x86_win32_mingw
+platform = x86_win32_mingw
 #platform = x86_win32_dmc
 #platform = powerpc_LynxOS_4.0
 #platform = x86_ets

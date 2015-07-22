@@ -134,6 +134,22 @@
 #     endif
 #  endif
 
+#if defined(__MINGW32__)
+#define HAS_Cplusplus_Namespace
+#define HAS_Std_Namespace
+#ifndef HAVE_STD
+#  define HAVE_STD 1
+#endif
+
+#  if defined(_WIN64)
+#    define SIZEOF_PTR  8
+#    define SIZEOF_LONG 4
+#    define SIZEOF_LONG_LONG 8
+#include <stdio.h>
+#  endif
+
+#endif
+
 // GCC claims to support long long on all platforms
 #  define HAS_LongLong
 #  define HAS_LongDouble
@@ -340,7 +356,9 @@
 
 #if defined(__x86__)
 #  define _OMNIORB_HOST_BYTE_ORDER_ 1
+#if !defined(SIZEOF_LONG_DOUBLE)
 #  define SIZEOF_LONG_DOUBLE 12
+#endif
 
 #elif defined(__sparc__)
 #  define _OMNIORB_HOST_BYTE_ORDER_ 0

@@ -695,7 +695,11 @@ omniOrbPOA::destroy(CORBA::Boolean etherealize_objects,
 
     void** args = new void* [2];
     args[0] = (omniOrbPOA*) this;
+#if defined(_WIN64)
+    args[1] = (void*) (ptr_arith_t) etherealize_objects;
+#else
     args[1] = (void*) (unsigned long) etherealize_objects;
+#endif
 
     try {
       (new omni_thread(destroyer_thread_fn, args))->start();
@@ -3884,7 +3888,11 @@ destroyer_thread_fn(void* args)
   void** targs = (void**) args;
 
   omniOrbPOA* poa = (omniOrbPOA*) targs[0];
+#if defined(_WIN64)
+  CORBA::Boolean etherealise = (CORBA::Boolean) (ptr_arith_t) targs[1];
+#else
   CORBA::Boolean etherealise = (CORBA::Boolean) (unsigned long) targs[1];
+#endif
   delete[] targs;
 
   poa->do_destroy(etherealise);
