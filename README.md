@@ -1,13 +1,13 @@
 # omniorb
-omniORB with changes to support mingw64 from msys2
+omniORB with changes to support both mingw32 and mingw64 from msys2
 
-1. start mingw64-shell.bat in msys2
-2. clone this repo locally
-3. go to the omniORB clone directory
+1. start mingw32-shell.bat or mingw64-shell.bat in msys2
+2. clone this repo locally: git clone https://github.com/adrpo/omniorb
+3. cd omniorb
 4. install python32 bit or python64 from https://www.python.org/downloads/
 5. edit mk\platforms\x86_win32_mingw.mk and change PYTHON variable to point to where you installed python
 6. build omniORB > cd src; make export
-7. you have the directories bin/ include/ lib/ inside the top directory containing the executable and libraries
+7. you will have the directories bin/ include/ lib/ inside the top directory containing the executable and libraries
 
 
 If you have issue with linking with libpython27.a, re-generate the python*/libs/libpython27.a
