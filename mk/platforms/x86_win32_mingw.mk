@@ -22,8 +22,13 @@ ABSTOP = $(shell cd $(TOP); pwd)
 # In that case, uncomment the first line below.
 
 #PYTHON = $(ABSTOP)/$(BINDIR)/omnipython
+# select python depending on mingw32 and mingw64
+ifeq (MINGW32,$(findstring MINGW32,$(shell uname)))
+PYTHON = /f/bin/python32/python
+else # 64 bit
 PYTHON = /f/bin/python64/python
-#PYTHON = /mingw64/bin/python
+endif
+
 
 
 #
@@ -33,8 +38,11 @@ PYTHON = /f/bin/python64/python
 include $(THIS_IMPORT_TREE)/mk/mingw.mk
 
 
-
+ifeq (MINGW32,$(findstring MINGW32,$(shell uname)))
+IMPORT_CPPFLAGS += -D__x86__ -D__NT__ -D__OSVERSION__=4
+else # 64 bit
 IMPORT_CPPFLAGS += -D__x86__ -D__NT__ -D__OSVERSION__=4 -D_WIN64 -DMS_WIN64
+endif
 
 
 # Default directory for the omniNames log files.

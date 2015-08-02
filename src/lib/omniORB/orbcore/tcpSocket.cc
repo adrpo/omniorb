@@ -37,6 +37,10 @@
 #include <giopStrandFlags.h>
 #include <tcpSocket.h>
 
+#if defined(__MINGW32__)
+#include <stdio.h> /* for sprintf */
+#endif
+
 #if defined(NTArchitecture)
 #  include <libcWrapper.h>
 #  include <ws2tcpip.h>
