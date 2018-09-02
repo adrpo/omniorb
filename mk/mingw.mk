@@ -9,10 +9,10 @@ SORT = sort
 
 
 AR = ar cq
-CXX = g++
-CXXLINK	= g++
-CC = gcc
-CLINK = gcc
+CXX = clang++
+CXXLINK	= clang++
+CC = clang
+CLINK = clang
 OMKDEPEND	= $(BASE_OMNI_TREE)/$(BINDIR)/omkdepend
 CMAKEDEPEND = $(OMKDEPEND) -D__GNUC__
 CXXMAKEDEPEND = $(OMKDEPEND) -D__cplusplus -D__GNUG__ -D__GNUC__

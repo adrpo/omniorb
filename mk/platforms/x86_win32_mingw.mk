@@ -24,9 +24,9 @@ ABSTOP = $(shell cd $(TOP); pwd)
 #PYTHON = $(ABSTOP)/$(BINDIR)/omnipython
 # select python depending on mingw32 and mingw64
 ifeq (MINGW32,$(findstring MINGW32,$(shell uname)))
-PYTHON = /f/bin/python32/python
+PYTHON = /e/bin/python32/python
 else # 64 bit
-PYTHON = /f/bin/python64/python
+PYTHON = /e/bin/python64/python
 endif
 
 

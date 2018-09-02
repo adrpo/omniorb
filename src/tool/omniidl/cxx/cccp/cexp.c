@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.0.4.  */
+/* A Bison parser, made by GNU Bison 3.0.5.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "3.0.4"
+#define YYBISON_VERSION "3.0.5"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -1195,6 +1195,7 @@ yysyntax_error (YYSIZE_T *yymsg_alloc, char **yymsg,
       case N:                               \
         yyformat = S;                       \
       break
+    default: /* Avoid compiler warnings. */
       YYCASE_(0, YY_("syntax error"));
       YYCASE_(1, YY_("syntax error, unexpected %s"));
       YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
@@ -1511,79 +1512,79 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 275 "cexp.y" /* yacc.c:1646  */
+#line 275 "cexp.y" /* yacc.c:1648  */
     { expression_value = (yyvsp[0].integer).value; }
-#line 1517 "y.tab.c" /* yacc.c:1646  */
+#line 1518 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 4:
-#line 281 "cexp.y" /* yacc.c:1646  */
+#line 281 "cexp.y" /* yacc.c:1648  */
     { if (pedantic)
 			    pedwarn ("comma operator in operand of `#if'");
 			  (yyval.integer) = (yyvsp[0].integer); }
-#line 1525 "y.tab.c" /* yacc.c:1646  */
+#line 1526 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 5:
-#line 288 "cexp.y" /* yacc.c:1646  */
+#line 288 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = - (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[0].integer).signedp;
 			  if (((yyval.integer).value & (yyvsp[0].integer).value & (yyval.integer).signedp) < 0)
 			    integer_overflow (); }
-#line 1534 "y.tab.c" /* yacc.c:1646  */
+#line 1535 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 6:
-#line 293 "cexp.y" /* yacc.c:1646  */
+#line 293 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = ! (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = SIGNED; }
-#line 1541 "y.tab.c" /* yacc.c:1646  */
+#line 1542 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 7:
-#line 296 "cexp.y" /* yacc.c:1646  */
+#line 296 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer) = (yyvsp[0].integer); }
-#line 1547 "y.tab.c" /* yacc.c:1646  */
+#line 1548 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 8:
-#line 298 "cexp.y" /* yacc.c:1646  */
+#line 298 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = ~ (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[0].integer).signedp; }
-#line 1554 "y.tab.c" /* yacc.c:1646  */
+#line 1555 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 9:
-#line 301 "cexp.y" /* yacc.c:1646  */
+#line 301 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = check_assertion ((yyvsp[0].name).address, (yyvsp[0].name).length,
 						      0, NULL_PTR);
 			  (yyval.integer).signedp = SIGNED; }
-#line 1562 "y.tab.c" /* yacc.c:1646  */
+#line 1563 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 10:
-#line 305 "cexp.y" /* yacc.c:1646  */
+#line 305 "cexp.y" /* yacc.c:1648  */
     { keyword_parsing = 1; }
-#line 1568 "y.tab.c" /* yacc.c:1646  */
+#line 1569 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 11:
-#line 307 "cexp.y" /* yacc.c:1646  */
+#line 307 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = check_assertion ((yyvsp[-4].name).address, (yyvsp[-4].name).length,
 						      1, (yyvsp[-1].keywords));
 			  keyword_parsing = 0;
 			  (yyval.integer).signedp = SIGNED; }
-#line 1577 "y.tab.c" /* yacc.c:1646  */
+#line 1578 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 12:
-#line 312 "cexp.y" /* yacc.c:1646  */
+#line 312 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer) = (yyvsp[-1].integer); }
-#line 1583 "y.tab.c" /* yacc.c:1646  */
+#line 1584 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 13:
-#line 317 "cexp.y" /* yacc.c:1646  */
+#line 317 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp;
 			  if ((yyval.integer).signedp)
 			    {
@@ -1596,11 +1597,11 @@ yyreduce:
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					* (yyvsp[0].integer).value); }
-#line 1600 "y.tab.c" /* yacc.c:1646  */
+#line 1601 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 14:
-#line 330 "cexp.y" /* yacc.c:1646  */
+#line 330 "cexp.y" /* yacc.c:1648  */
     { if ((yyvsp[0].integer).value == 0)
 			    {
 			      if (!skip_evaluation)
@@ -1617,11 +1618,11 @@ yyreduce:
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					/ (yyvsp[0].integer).value); }
-#line 1621 "y.tab.c" /* yacc.c:1646  */
+#line 1622 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 15:
-#line 347 "cexp.y" /* yacc.c:1646  */
+#line 347 "cexp.y" /* yacc.c:1648  */
     { if ((yyvsp[0].integer).value == 0)
 			    {
 			      if (!skip_evaluation)
@@ -1634,206 +1635,206 @@ yyreduce:
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					% (yyvsp[0].integer).value); }
-#line 1638 "y.tab.c" /* yacc.c:1646  */
+#line 1639 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 16:
-#line 360 "cexp.y" /* yacc.c:1646  */
+#line 360 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = (yyvsp[-2].integer).value + (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp;
 			  if (overflow_sum_sign ((yyvsp[-2].integer).value, (yyvsp[0].integer).value,
 						 (yyval.integer).value, (yyval.integer).signedp))
 			    integer_overflow (); }
-#line 1648 "y.tab.c" /* yacc.c:1646  */
+#line 1649 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 17:
-#line 366 "cexp.y" /* yacc.c:1646  */
+#line 366 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = (yyvsp[-2].integer).value - (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp;
 			  if (overflow_sum_sign ((yyval.integer).value, (yyvsp[0].integer).value,
 						 (yyvsp[-2].integer).value, (yyval.integer).signedp))
 			    integer_overflow (); }
-#line 1658 "y.tab.c" /* yacc.c:1646  */
+#line 1659 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 18:
-#line 372 "cexp.y" /* yacc.c:1646  */
+#line 372 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = (yyvsp[-2].integer).signedp;
 			  if (((yyvsp[0].integer).value & (yyvsp[0].integer).signedp) < 0)
 			    (yyval.integer).value = right_shift (&(yyvsp[-2].integer), -(yyvsp[0].integer).value);
 			  else
 			    (yyval.integer).value = left_shift (&(yyvsp[-2].integer), (yyvsp[0].integer).value); }
-#line 1668 "y.tab.c" /* yacc.c:1646  */
+#line 1669 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 19:
-#line 378 "cexp.y" /* yacc.c:1646  */
+#line 378 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = (yyvsp[-2].integer).signedp;
 			  if (((yyvsp[0].integer).value & (yyvsp[0].integer).signedp) < 0)
 			    (yyval.integer).value = left_shift (&(yyvsp[-2].integer), -(yyvsp[0].integer).value);
 			  else
 			    (yyval.integer).value = right_shift (&(yyvsp[-2].integer), (yyvsp[0].integer).value); }
-#line 1678 "y.tab.c" /* yacc.c:1646  */
+#line 1679 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 20:
-#line 384 "cexp.y" /* yacc.c:1646  */
+#line 384 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = ((yyvsp[-2].integer).value == (yyvsp[0].integer).value);
 			  (yyval.integer).signedp = SIGNED; }
-#line 1685 "y.tab.c" /* yacc.c:1646  */
+#line 1686 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 21:
-#line 387 "cexp.y" /* yacc.c:1646  */
+#line 387 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = ((yyvsp[-2].integer).value != (yyvsp[0].integer).value);
 			  (yyval.integer).signedp = SIGNED; }
-#line 1692 "y.tab.c" /* yacc.c:1646  */
+#line 1693 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 22:
-#line 390 "cexp.y" /* yacc.c:1646  */
+#line 390 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = SIGNED;
 			  if ((yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp)
 			    (yyval.integer).value = (yyvsp[-2].integer).value <= (yyvsp[0].integer).value;
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					<= (yyvsp[0].integer).value); }
-#line 1703 "y.tab.c" /* yacc.c:1646  */
+#line 1704 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 23:
-#line 397 "cexp.y" /* yacc.c:1646  */
+#line 397 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = SIGNED;
 			  if ((yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp)
 			    (yyval.integer).value = (yyvsp[-2].integer).value >= (yyvsp[0].integer).value;
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					>= (yyvsp[0].integer).value); }
-#line 1714 "y.tab.c" /* yacc.c:1646  */
+#line 1715 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 24:
-#line 404 "cexp.y" /* yacc.c:1646  */
+#line 404 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = SIGNED;
 			  if ((yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp)
 			    (yyval.integer).value = (yyvsp[-2].integer).value < (yyvsp[0].integer).value;
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					< (yyvsp[0].integer).value); }
-#line 1725 "y.tab.c" /* yacc.c:1646  */
+#line 1726 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 25:
-#line 411 "cexp.y" /* yacc.c:1646  */
+#line 411 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).signedp = SIGNED;
 			  if ((yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp)
 			    (yyval.integer).value = (yyvsp[-2].integer).value > (yyvsp[0].integer).value;
 			  else
 			    (yyval.integer).value = ((unsigned HOST_WIDE_INT) (yyvsp[-2].integer).value
 					> (yyvsp[0].integer).value); }
-#line 1736 "y.tab.c" /* yacc.c:1646  */
+#line 1737 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 26:
-#line 418 "cexp.y" /* yacc.c:1646  */
+#line 418 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = (yyvsp[-2].integer).value & (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp; }
-#line 1743 "y.tab.c" /* yacc.c:1646  */
+#line 1744 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 27:
-#line 421 "cexp.y" /* yacc.c:1646  */
+#line 421 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = (yyvsp[-2].integer).value ^ (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp; }
-#line 1750 "y.tab.c" /* yacc.c:1646  */
+#line 1751 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 28:
-#line 424 "cexp.y" /* yacc.c:1646  */
+#line 424 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer).value = (yyvsp[-2].integer).value | (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-2].integer).signedp & (yyvsp[0].integer).signedp; }
-#line 1757 "y.tab.c" /* yacc.c:1646  */
+#line 1758 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 29:
-#line 427 "cexp.y" /* yacc.c:1646  */
+#line 427 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation += !(yyvsp[-1].integer).value; }
-#line 1763 "y.tab.c" /* yacc.c:1646  */
+#line 1764 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 30:
-#line 429 "cexp.y" /* yacc.c:1646  */
+#line 429 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation -= !(yyvsp[-3].integer).value;
 			  (yyval.integer).value = ((yyvsp[-3].integer).value && (yyvsp[0].integer).value);
 			  (yyval.integer).signedp = SIGNED; }
-#line 1771 "y.tab.c" /* yacc.c:1646  */
+#line 1772 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 31:
-#line 433 "cexp.y" /* yacc.c:1646  */
+#line 433 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation += !!(yyvsp[-1].integer).value; }
-#line 1777 "y.tab.c" /* yacc.c:1646  */
+#line 1778 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 32:
-#line 435 "cexp.y" /* yacc.c:1646  */
+#line 435 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation -= !!(yyvsp[-3].integer).value;
 			  (yyval.integer).value = ((yyvsp[-3].integer).value || (yyvsp[0].integer).value);
 			  (yyval.integer).signedp = SIGNED; }
-#line 1785 "y.tab.c" /* yacc.c:1646  */
+#line 1786 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 33:
-#line 439 "cexp.y" /* yacc.c:1646  */
+#line 439 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation += !(yyvsp[-1].integer).value; }
-#line 1791 "y.tab.c" /* yacc.c:1646  */
+#line 1792 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 34:
-#line 441 "cexp.y" /* yacc.c:1646  */
+#line 441 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation += !!(yyvsp[-4].integer).value - !(yyvsp[-4].integer).value; }
-#line 1797 "y.tab.c" /* yacc.c:1646  */
+#line 1798 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 35:
-#line 443 "cexp.y" /* yacc.c:1646  */
+#line 443 "cexp.y" /* yacc.c:1648  */
     { skip_evaluation -= !!(yyvsp[-6].integer).value;
 			  (yyval.integer).value = (yyvsp[-6].integer).value ? (yyvsp[-3].integer).value : (yyvsp[0].integer).value;
 			  (yyval.integer).signedp = (yyvsp[-3].integer).signedp & (yyvsp[0].integer).signedp; }
-#line 1805 "y.tab.c" /* yacc.c:1646  */
+#line 1806 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 36:
-#line 447 "cexp.y" /* yacc.c:1646  */
+#line 447 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer) = yylval.integer; }
-#line 1811 "y.tab.c" /* yacc.c:1646  */
+#line 1812 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 37:
-#line 449 "cexp.y" /* yacc.c:1646  */
+#line 449 "cexp.y" /* yacc.c:1648  */
     { (yyval.integer) = yylval.integer; }
-#line 1817 "y.tab.c" /* yacc.c:1646  */
+#line 1818 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 38:
-#line 451 "cexp.y" /* yacc.c:1646  */
+#line 451 "cexp.y" /* yacc.c:1648  */
     { if (warn_undef && !skip_evaluation)
 			    warning ("`%.*s' is not defined",
 				     (yyvsp[0].name).length, (yyvsp[0].name).address);
 			  (yyval.integer).value = 0;
 			  (yyval.integer).signedp = SIGNED; }
-#line 1827 "y.tab.c" /* yacc.c:1646  */
+#line 1828 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 39:
-#line 459 "cexp.y" /* yacc.c:1646  */
+#line 459 "cexp.y" /* yacc.c:1648  */
     { (yyval.keywords) = 0; }
-#line 1833 "y.tab.c" /* yacc.c:1646  */
+#line 1834 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 40:
-#line 461 "cexp.y" /* yacc.c:1646  */
+#line 461 "cexp.y" /* yacc.c:1648  */
     { struct arglist *temp;
 			  (yyval.keywords) = (struct arglist *) xmalloc (sizeof (struct arglist));
 			  (yyval.keywords)->next = (yyvsp[-2].keywords);
@@ -1846,20 +1847,20 @@ yyreduce:
 			  temp->next->next = (yyvsp[0].keywords);
 			  temp->next->name = (U_CHAR *) ")";
 			  temp->next->length = 1; }
-#line 1850 "y.tab.c" /* yacc.c:1646  */
+#line 1851 "y.tab.c" /* yacc.c:1648  */
     break;
 
   case 41:
-#line 474 "cexp.y" /* yacc.c:1646  */
+#line 474 "cexp.y" /* yacc.c:1648  */
     { (yyval.keywords) = (struct arglist *) xmalloc (sizeof (struct arglist));
 			  (yyval.keywords)->name = (yyvsp[-1].name).address;
 			  (yyval.keywords)->length = (yyvsp[-1].name).length;
 			  (yyval.keywords)->next = (yyvsp[0].keywords); }
-#line 1859 "y.tab.c" /* yacc.c:1646  */
+#line 1860 "y.tab.c" /* yacc.c:1648  */
     break;
 
 
-#line 1863 "y.tab.c" /* yacc.c:1646  */
+#line 1864 "y.tab.c" /* yacc.c:1648  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2087,7 +2088,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 479 "cexp.y" /* yacc.c:1906  */
+#line 479 "cexp.y" /* yacc.c:1907  */
 
 
 /* During parsing of a C expression, the pointer to the next character

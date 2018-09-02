@@ -14,5 +14,10 @@ If you have issue with linking with libpython27.a, re-generate the python*/libs/
 - 32bit: gendef.exe /c/Windows/SysWOW64/python27.dll && dlltool --dllname /c/Windows/SysWOW64/python27.dll --def python27.def --output-lib /f/bin/python32/libs/libpython27.a -m i386
 - 64bit: gendef.exe /c/Windows/System32/python27.dll && dlltool --dllname /c/Windows/System32/python27.dll --def python27.def --output-lib /f/bin/python64/libs/libpython27.a
 
-
+Notes 2018-09-01
+- in python32|64/include/pyconfig.h guard define hypot!
+  #if !defined(__MINGW32__)
+  #define hypot _hypot
+  #endif
+  
 

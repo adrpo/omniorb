@@ -27,6 +27,10 @@
 //   
 //   Python interface to front-end
 
+// include cmath before including Python
+// as hypot is renamed to _hypot
+#include <cmath>
+
 #if defined(__VMS)
 #  include <Python.h>
 #else
